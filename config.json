@@ -1,0 +1,14 @@
+{
+    "mtheat.etpump": {
+        "retention": "14d",
+        "time-index": "time_index"
+    },
+    "another_table": {
+        "retention": "96h",
+        "time-index": "timestamp"
+    },
+    "just_another": {
+        "retention": "100s",
+        "time-index": "timestamp"
+    }
+}
