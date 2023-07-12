@@ -1,6 +1,6 @@
-# CrateCleaner
+# CrateSweep
 
-CrateCleaner is a lightweight, containerized Python tool designed to regularly clean up CrateDB tables based on configured intervals. This is particularly useful for managing databases that collect time-series data, where older data may need to be purged regularly to optimize storage and performance.
+CrateSweep is a lightweight, containerized Python tool designed to regularly clean up CrateDB tables based on configured intervals. This is particularly useful for managing databases that collect time-series data, where older data may need to be purged regularly to optimize storage and performance.
 
 ## Features
 
@@ -22,13 +22,13 @@ CrateCleaner is a lightweight, containerized Python tool designed to regularly c
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/username/CrateCleaner.git
+    git clone https://github.com/N5GEH/n5geh.tools.cratesweep.git
     ```
 
 2. Navigate to the cloned directory:
 
     ```bash
-    cd CrateCleaner
+    cd n5geh.tools.cratesweep
     ```
 
 3. Modify the `config.json` file to include your tables, their corresponding time indices, and the desired data retention periods. For example:
@@ -49,7 +49,7 @@ CrateCleaner is a lightweight, containerized Python tool designed to regularly c
 4. Build the Docker image:
 
     ```bash
-    docker build -t cratedb-cleanup:0.1 .
+    docker build -t cratesweep:0.1 .
     ```
 
 5. Create a `docker-compose.yml` file with the necessary environment variables for your CrateDB instance and a volume to mount the `config.json` file. Here's an example:
@@ -58,7 +58,7 @@ CrateCleaner is a lightweight, containerized Python tool designed to regularly c
     version: '3'
     services:
       cratedb-cleanup:
-        image: cratedb-cleanup:0.1
+        image: cratesweep:0.1
         environment:
           - CRATE_HOST=your_crate_host
           - CRATE_USER=your_crate_user
